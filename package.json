@@ -1,0 +1,26 @@
+{
+  "name": "markdown",
+  "version": "1.0.0",
+  "description": "Markdown test task",
+  "main": "index.js",
+  "scripts": {
+    "start": "node run.js",
+    "dev": "nodemon run.js",
+    "test": "mocha test --recursive"
+  },
+  "author": "Roman Ostolosh",
+  "license": "ISC",
+  "dependencies": {
+    "boom": "^2.8.0",
+    "good": "^6.2.0",
+    "good-console": "^5.0.2",
+    "joi": "^6.5.0",
+    "mongodb": "^2.0.35"
+  },
+  "devDependencies": {
+    "chai": "^3.0.0",
+    "hippie": "^0.3.0",
+    "mocha": "^2.2.5",
+    "sinon": "^1.15.4"
+  }
+}
