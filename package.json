@@ -14,7 +14,9 @@
     "boom": "^2.8.0",
     "good": "^6.2.0",
     "good-console": "^5.0.2",
+    "hapi-mongodb": "^3.0.0",
     "joi": "^6.5.0",
+    "marked": "^0.3.3",
     "mongodb": "^2.0.35"
   },
   "devDependencies": {
