@@ -1,8 +1,6 @@
 var marked = require('marked');
 
-module.exports = {
-    toHTML: function(text) {
-        // TODO: parse markdown here
-        return marked(text);
-    }
+module.exports = function(text) {
+    // TODO: implement your own parser
+    return marked(text).replace(/\sid=\".*\"/g, '');
 };

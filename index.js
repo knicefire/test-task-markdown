@@ -51,7 +51,7 @@ exports.register = function (server, options, next) {
 
             var query = {
                 markdown: payload,
-                html: parser.toHTML(payload)
+                html: parser(payload)
             };
 
             collection.insert(query, function(err, result) {

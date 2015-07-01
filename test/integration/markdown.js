@@ -37,7 +37,7 @@ describe('/markdown/get', function(){
             collection.insert({
                 _id: ObjectID("5591c1275ef8a0a917032fde"),
                 text: '# Hello there',
-                html: '<h1 id="hello-there">Hello there</h1>'
+                html: '<h1>Hello there</h1>'
             }, done);
         });
 
@@ -45,7 +45,7 @@ describe('/markdown/get', function(){
             request()
                 .get('/markdown/get?id=5591c1275ef8a0a917032fde')
                 .expectStatus(200)
-                .expectBody('{"_id":"5591c1275ef8a0a917032fde","text":"# Hello there","html":"<h1 id=\\"hello-there\\">Hello there</h1>"}')
+                .expectBody('{"_id":"5591c1275ef8a0a917032fde","text":"# Hello there","html":"<h1>Hello there</h1>"}')
                 .end(done);
         });
     });
@@ -105,7 +105,7 @@ describe('/markdown/save', function(){
                         var _record = JSON.parse(body);
                         expect(_record._id).to.be.defined;
                         expect(_record._id.length).to.equal(24);
-                        expect(_record.html).to.equal('<h1 id="will-it-work-">will it work?</h1>\n');
+                        expect(_record.html).to.equal('<h1>will it work?</h1>\n');
                         next();
                     }
                     catch (e) {
