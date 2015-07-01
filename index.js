@@ -42,9 +42,16 @@ exports.register = function (server, options, next) {
         method: 'POST',
         path: '/save',
         handler: function(request, reply) {
+            var payload = request.payload;
+
+            // validation
+            if (!(payload && typeof payload === 'string')) {
+                return reply(Boom.badRequest('No data'));
+            }
+
             var query = {
-                markdown: request.payload,
-                html: parser.toHTML(request.payload)
+                markdown: payload,
+                html: parser.toHTML(payload)
             };
 
             collection.insert(query, function(err, result) {

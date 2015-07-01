@@ -12,8 +12,8 @@ describe('Markdown Parser', function() {
     describe('Header parser', function() {
         it('should convert # to H1 tag', function() {
             test(
-                '# Hello here',
-                '<h1 id="hello-here">Hello here</h1>');
+                '# Hello there',
+                '<h1 id="hello-there">Hello there</h1>');
         });
 
         it('should convert ## to H2 tag', function() {
