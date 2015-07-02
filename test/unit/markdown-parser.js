@@ -157,6 +157,12 @@ describe('Markdown Parser', function() {
                     '*Hello there* but\nnot *here*',
                     '<p><em>Hello there</em> but\nnot <em>here</em></p>');
             });
+
+            it('should properly handle nesting emphases', function() {
+                test(
+                    '*Hello there *but* not here*',
+                    '<p><em>Hello there </em>but<em> not here</em></p>');
+            });
         });
 
         describe('Mixed cases', function() {
@@ -204,6 +210,12 @@ describe('Markdown Parser', function() {
                 test(
                     '**Hello there** but\nnot **here**',
                     '<p><strong>Hello there</strong> but\nnot <strong>here</strong></p>');
+            });
+
+            it('should properly handle nesting strongs', function() {
+                test(
+                    '**Hello there **but** not here**',
+                    '<p><strong>Hello there </strong>but<strong> not here</strong></p>');
             });
         });
 
