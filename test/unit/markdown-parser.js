@@ -1,7 +1,7 @@
 var sinon = require('sinon');
 var expect = require('chai').expect;
 
-var parser = require('../../markdown-parser');
+var parser = require('../../lib/markdown-parser');
 
 /**
  * TODO: remove ids from header

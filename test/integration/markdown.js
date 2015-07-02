@@ -9,7 +9,7 @@ process.env.NODE_ENV = 'test';
 process.env.MONGO_DB_NAME = 'markdown-test-task-testing-db';
 process.env.MONGO_MARKDOWN_COLLECTION = collectionName = 'notes';
 
-var server = require('../../server.js');
+var server = require('../../lib/server.js');
 
 // wait for server to run
 before(function(done) {
