@@ -166,6 +166,12 @@ describe('Markdown Parser', function() {
                     '<p><strong>Hello <em>here</em></strong></p>');
             });
 
+            it('should empasize and strong the whole line', function() {
+                test(
+                    '***Hello everyone***',
+                    '<p><strong><em>Hello everyone</em></strong></p>');
+            });
+
             it('should empasize word within paragraph', function() {
                 test(
                     'Hello *here* everyone',
