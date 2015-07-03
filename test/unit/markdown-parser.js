@@ -3,9 +3,6 @@ var expect = require('chai').expect;
 
 var parser = require('../../lib/markdown-parser');
 
-/**
- * TODO: remove ids from header
- */
 var test = function(input, output) {
     var result = parser(input);
     expect(result).to.equal(output + '\n');
@@ -91,7 +88,7 @@ describe('Markdown Parser', function() {
             it('should render header and link', function() {
                 test(
                     '## Hello [here](http://example.com)',
-                    '<h2>here</a></h2>');
+                    '<h2>Hello <a href="http://example.com">here</a></h2>');
             });
         });
     });
@@ -168,14 +165,14 @@ describe('Markdown Parser', function() {
         describe('Mixed cases', function() {
             it('should empasize words within strong', function() {
                 test(
-                    '**Hello *here***',
-                    '<p><strong>Hello <em>here</em></strong></p>');
+                    '**Hello *here* **',
+                    '<p><strong>Hello <em>here</em> </strong></p>');
             });
 
             it('should empasize and strong the whole line', function() {
                 test(
-                    '***Hello everyone***',
-                    '<p><strong><em>Hello everyone</em></strong></p>');
+                    '** *Hello everyone* **',
+                    '<p><strong> <em>Hello everyone</em> </strong></p>');
             });
 
             it('should empasize word within paragraph', function() {
@@ -247,7 +244,7 @@ describe('Markdown Parser', function() {
             it('should render link in header', function() {
                 test(
                     '## [Link to a site](http://example.com)',
-                    '<h2>Link to a site</a></h2>');
+                    '<h2><a href="http://example.com">Link to a site</a></h2>');
             });
 
             it('should convert line into link and emphasize word', function() {
