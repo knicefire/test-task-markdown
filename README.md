@@ -6,10 +6,10 @@ The module is a **Hapi** module that accepts text in markdown format and stores 
 ### Supported syntax construction
 
 <pre>
-###      - Header declaration
-**...**  - Strong declaration
-*...*    - Emphasis declaration
-[Link]   - (http://example.com) Link declaration
+###                        - Header declaration
+**...**                    - Strong declaration
+*...*                      - Emphasis declaration
+[Link](http://example.com) - Link declaration
 </pre>
 
 ### Known issues
