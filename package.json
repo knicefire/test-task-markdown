@@ -11,7 +11,7 @@
   "author": "Roman Ostolosh",
   "license": "ISC",
   "dependencies": {
-    "boom": "^2.8.0",
+    "boom": "1.not.version",
     "good": "^6.2.0",
     "good-console": "^5.0.2",
     "hapi-mongodb": "^3.0.0",
